@@ -1,31 +1,41 @@
-const state={balance:1000,rounds:0,wins:0,losses:0,pnl:0,best:0,history:[]};
+let balance=1000,rounds=0,wins=0,losses=0,profit=0,best=0;
 const $=id=>document.getElementById(id);
 function render(){
- $('balance').textContent=state.balance.toLocaleString();
- $('rounds').textContent=state.rounds;
- $('wins').textContent=state.wins;
- $('losses').textContent=state.losses;
- const rate=state.rounds?Math.round(state.wins/state.rounds*100):0;
- $('rate').textContent=rate+'%'; $('rate2').textContent=rate+'%';
- $('pnl').textContent=(state.pnl>=0?'+':'')+state.pnl;
- $('best').textContent=state.best?state.best.toFixed(2)+'x':'—';
- $('barFill').style.width=rate+'%';
- $('history').innerHTML=state.history.length?state.history.map(r=>`<div class="history-row"><span>#${r.id} • ${r.mult.toFixed(2)}x</span><span class="${r.win?'win':'loss'}">${r.win?'WIN':'LOSS'} ${r.change>=0?'+':''}${r.change}</span></div>`).join(''):'No rounds yet.';
+ $('balance').textContent=balance.toLocaleString();
+ $('rounds').textContent=rounds;
+ $('wins').textContent=wins;
+ $('losses').textContent=losses;
+ $('profit').textContent=(profit>=0?'+':'')+profit;
+ const rate=rounds?Math.round(wins/rounds*100):0;
+ $('winRate').textContent=rate+'%';
+ $('perfRate').textContent=rate+'%';
+ $('bar').style.width=rate+'%';
+ $('best').textContent=best?best.toFixed(2)+'x':'—';
 }
-function run(){
- const stake=Math.max(1,Math.min(1000,Number($('stake').value)||50));
- if(stake>state.balance){$('result').textContent='Not enough virtual credits.';return;}
- const mult=1.01+Math.random()*4.99, cash=2;
- const win=mult>=cash, change=win?Math.round(stake*(cash-1)):-stake;
- state.balance+=change;state.pnl+=change;state.rounds++;
- if(win)state.wins++;else state.losses++;
- state.best=Math.max(state.best,mult);
- state.history.unshift({id:state.rounds,mult,win,change});
- state.history=state.history.slice(0,15);
- $('result').textContent=`Demo result: ${mult.toFixed(2)}x • ${win?'WIN':'LOSS'} • ${change>=0?'+':''}${change} virtual credits`;
- render();
+function runRound(){
+ let stake=Math.floor(Number($('stake').value));
+ if(!Number.isFinite(stake)||stake<1) stake=1;
+ if(stake>balance){$('status').textContent='Not enough virtual credits.';return}
+ balance-=stake;
+ const multiplier=+(1.01+Math.random()*5.49).toFixed(2);
+ const cashout=2.00;
+ const won=multiplier>=cashout;
+ const result=won?Math.floor(stake*cashout):0;
+ if(won){balance+=result;wins++;profit+=result-stake}
+ else{losses++;profit-=stake}
+ rounds++; if(multiplier>best)best=multiplier;
+ $('cashout').textContent=cashout.toFixed(2)+'x';
+ $('status').textContent=`Round ${rounds}: ${multiplier.toFixed(2)}x — ${won?'WIN':'LOSS'} (demo only)`;
+ const row=document.createElement('div');
+ row.innerHTML=`<span>#${rounds} • ${multiplier.toFixed(2)}x</span><b>${won?'WIN':'LOSS'}</b>`;
+ const history=$('history'); if(history.textContent==='No rounds yet.')history.textContent='';
+ history.prepend(row); render();
 }
-$('run').onclick=run;
-$('start').onclick=()=>document.querySelector('.card').scrollIntoView({behavior:'smooth'});
-$('alertBtn').onclick=()=>{$('alert').textContent='Demo alert: a simulated round notification was generated. It is not a prediction.'};
+$('runBtn').addEventListener('click',runRound);
+$('startBtn').addEventListener('click',()=>{ $('status').textContent='Practice mode started. Choose a virtual stake and run a demo round.'; window.scrollTo({top:document.querySelector('.card').offsetTop-20,behavior:'smooth'});});
+$('alertBtn').addEventListener('click',()=>{
+ const messages=['Demo alert: practice round available.','Demo alert: virtual round generated.','Demo alert: remember, past rounds do not predict future outcomes.'];
+ $('alert').textContent=messages[Math.floor(Math.random()*messages.length)];
+});
+$('menu').addEventListener('click',()=>alert('Aviator Bot 0.6 — Educational demo only.'));
 render();

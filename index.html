@@ -3,67 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aviator Bot 0.5 — Practice</title>
+<title>Aviator Bot 0.6</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div>AVIATOR <span>BOT 0.5</span></div><div class="menu">☰</div></header>
+<header><b>AVIATOR <span>BOT 0.6</span></b><button id="menu">☰</button></header>
+
 <main>
 <section class="hero">
   <div class="badge">DEMO • EDUCATIONAL</div>
-  <h1>AVIATOR<br><b>BOT 0.5</b></h1>
+  <h1>AVIATOR<br><span>BOT 0.6</span></h1>
   <p>VIRTUAL CREDITS • PRACTICE • PERFORMANCE</p>
-  <button id="start">START PRACTICE</button>
-</section>
-
-<section class="balance">
-  <small>VIRTUAL BALANCE</small>
-  <strong id="balance">1,000</strong>
-  <span>credits</span>
+  <button id="startBtn" class="primary">START PRACTICE</button>
 </section>
 
 <h2>Dashboard</h2>
+<div class="balance">VIRTUAL BALANCE <b id="balance">1,000</b> credits</div>
+
 <section class="stats">
-<div><small>ROUNDS</small><strong id="rounds">0</strong></div>
-<div><small>WIN RATE</small><strong id="rate">0%</strong></div>
-<div><small>WINS</small><strong id="wins">0</strong></div>
-<div><small>LOSSES</small><strong id="losses">0</strong></div>
-<div><small>PROFIT / LOSS</small><strong id="pnl">0</strong></div>
-<div><small>BEST ROUND</small><strong id="best">—</strong></div>
+  <div>ROUNDS<strong id="rounds">0</strong></div>
+  <div>WIN RATE<strong id="winRate">0%</strong></div>
+  <div>WINS<strong id="wins">0</strong></div>
+  <div>LOSSES<strong id="losses">0</strong></div>
+  <div>PROFIT / LOSS<strong id="profit">0</strong></div>
+  <div>BEST ROUND<strong id="best">—</strong></div>
 </section>
 
 <section class="card">
 <h2>Practice Round</h2>
-<p class="muted">Virtual credits only. Results are randomly generated for educational practice.</p>
+<p>Virtual credits only. Results are randomly generated for educational practice.</p>
 <label>Virtual stake</label>
-<div class="stake-row">
+<div class="controls">
 <input id="stake" type="number" min="1" max="1000" value="50">
-<button id="run">RUN DEMO ROUND</button>
+<button id="runBtn" class="primary">RUN DEMO ROUND</button>
 </div>
-<div class="target">Practice cash-out: <b>2.00x</b></div>
-<div id="result" class="result">Ready for a practice round.</div>
+<b>Practice cash-out: <span id="cashout">2.00x</span></b>
+<div id="status" class="status">Ready for a practice round.</div>
 </section>
 
 <section class="card">
 <h2>Performance</h2>
-<div class="bar"><div id="barFill"></div></div>
-<div class="performance"><span>Win rate</span><b id="rate2">0%</b></div>
+<p>Win rate <b id="perfRate">0%</b></p>
+<div class="bar"><i id="bar"></i></div>
 </section>
 
 <section class="card">
 <h2>Round History</h2>
-<div id="history" class="history">No rounds yet.</div>
+<div id="history">No rounds yet.</div>
 </section>
 
 <section class="card">
 <h2>Demo Alert</h2>
-<p class="muted">Notifications are demonstrations only and do not predict future outcomes.</p>
-<button id="alertBtn">GENERATE DEMO ALERT</button>
-<div id="alert" class="alert">No demo alert generated.</div>
+<p>Notifications are demonstrations only and do not predict future outcomes.</p>
+<button id="alertBtn" class="primary">GENERATE DEMO ALERT</button>
+<div id="alert" class="status">No demo alert generated.</div>
 </section>
 
-<section class="card notes">
-<h2>About 0.5</h2>
+<section class="card">
+<h2>About 0.6</h2>
 <ul>
 <li>Uses virtual credits only.</li>
 <li>Random demo outcomes are for practice.</li>
@@ -72,7 +69,7 @@
 </ul>
 </section>
 </main>
-<footer>Aviator Bot 0.5 • Free demo • Educational simulator</footer>
+<footer>Aviator Bot 0.6 • Free demo • Educational simulator</footer>
 <script src="script.js"></script>
 </body>
 </html>
