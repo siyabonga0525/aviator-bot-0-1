@@ -1,13 +1,6 @@
-# Aviator Bot 0.4
+# Aviator Bot 0.5
+Free educational practice simulator using virtual credits.
 
-Free browser-based educational simulator using virtual credits.
+Includes virtual balance, practice rounds, performance tracking, round history and simulated notifications.
 
-Features:
-- Virtual balance
-- Practice rounds
-- Win/loss tracking
-- Profit/loss tracking
-- Win-rate statistics
-- Round history
-
-This project does not connect to Aviator or any real-money gambling service and does not predict future outcomes.
+This project does not connect to any real-money gambling service and does not predict future outcomes.
