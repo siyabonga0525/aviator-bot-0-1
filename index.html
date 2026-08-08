@@ -1,60 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aviator Bot 0.3.1</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aviator Bot 0.4 — Practice</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">AVIATOR <span>BOT 0.3.1</span></div>
-  <button class="menu" aria-label="Menu">☰</button>
-</header>
+<header><div>AVIATOR <span>BOT 0.4</span></div><div class="menu">☰</div></header>
 
 <main>
 <section class="hero">
   <div class="badge">DEMO • EDUCATIONAL</div>
-  <h1>AVIATOR<br><span>BOT 0.3.1</span></h1>
-  <p>STATISTICS • SIMULATED ROUNDS • ALERTS</p>
-  <button class="primary" id="openDashboard">OPEN DASHBOARD</button>
+  <h1>AVIATOR<br><b>BOT 0.4</b></h1>
+  <p>VIRTUAL CREDITS • PRACTICE ROUNDS • STATISTICS</p>
+  <button id="startBtn">START PRACTICE</button>
 </section>
 
-<h2 class="section-title">Dashboard</h2>
-
+<h2>Practice Dashboard</h2>
 <section class="stats">
-  <article class="stat"><div>DEMO ROUNDS</div><strong id="count">8</strong></article>
-  <article class="stat"><div>AVERAGE</div><strong id="avg">2.34x</strong></article>
-  <article class="stat"><div>HIGHEST</div><strong id="high">5.10x</strong></article>
-  <article class="stat"><div>LOWEST</div><strong id="low">1.08x</strong></article>
+  <div><small>VIRTUAL BALANCE</small><strong id="balance">1,000</strong></div>
+  <div><small>ROUNDS</small><strong id="rounds">0</strong></div>
+  <div><small>WINS</small><strong id="wins">0</strong></div>
+  <div><small>LOSS</small><strong id="losses">0</strong></div>
+  <div><small>PROFIT / LOSS</small><strong id="pnl">0</strong></div>
+  <div><small>WIN RATE</small><strong id="rate">0%</strong></div>
 </section>
 
-<section class="panel">
-  <div class="panel-head">
-    <div>
-      <h2>Round History</h2>
-      <p>Generated demo data only.</p>
-    </div>
-    <button class="primary small" id="addRound">ADD DEMO ROUND</button>
+<section class="card">
+  <h2>Practice Round</h2>
+  <p>Use virtual credits only. This simulator does not connect to or predict any real-money game.</p>
+  <div class="controls">
+    <input id="stake" type="number" min="1" max="1000" value="50">
+    <button id="roundBtn">RUN DEMO ROUND</button>
   </div>
-  <div class="chart-box"><canvas id="chart"></canvas></div>
-  <div id="rounds" class="round-grid"></div>
+  <div id="result" class="result">Ready for a practice round.</div>
 </section>
 
-<section class="panel">
-  <h2>Simulated Alert</h2>
-  <p>Notifications below are demonstrations only and do not predict future outcomes.</p>
-  <button class="primary small" id="alertBtn">GENERATE DEMO ALERT</button>
-  <div id="alertBox" class="alert">No demo alert generated yet.</div>
+<section class="card">
+  <h2>Round History</h2>
+  <div id="history" class="history">No rounds yet.</div>
 </section>
 
-<section class="panel">
-  <h2>About 0.3.1</h2>
-  <p>This browser-only project demonstrates statistics, charts and simulated notifications using sample data. It does not connect to or predict any real-money gambling game.</p>
+<section class="card">
+  <h2>Learning Notes</h2>
+  <ul>
+    <li>Past rounds do not reliably predict future outcomes.</li>
+    <li>Virtual results are randomly generated for practice.</li>
+    <li>No real-money deposits, withdrawals, betting, or gambling connection is included.</li>
+  </ul>
 </section>
 </main>
 
-<footer>Aviator Bot 0.3.1 • Demo only</footer>
+<footer>Aviator Bot 0.4 • Free demo • Educational simulator</footer>
 <script src="script.js"></script>
 </body>
 </html>

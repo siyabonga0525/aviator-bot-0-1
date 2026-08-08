@@ -1,13 +1,13 @@
-# Aviator Bot 0.3.1
+# Aviator Bot 0.4
 
-Corrected demo/educational dashboard.
+Free browser-based educational simulator using virtual credits.
 
-Includes:
-- Responsive statistic cards
-- Working canvas chart
-- Demo round generator
-- Visible round history
-- Simulated notifications
-- Mobile-friendly layout
+Features:
+- Virtual balance
+- Practice rounds
+- Win/loss tracking
+- Profit/loss tracking
+- Win-rate statistics
+- Round history
 
-This is sample-data software only. It does not connect to, predict, or automate any real-money gambling game.
+This project does not connect to Aviator or any real-money gambling service and does not predict future outcomes.
