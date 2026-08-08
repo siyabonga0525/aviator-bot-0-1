@@ -1,3 +1,6 @@
-function showMessage(){
-  alert("Welcome to Aviator Bot 0.1 — Demo dashboard coming next!");
-}
+const rounds=[1.24,2.15,1.08,3.42,1.76,5.10,2.61,1.33];
+function render(){const list=document.getElementById('historyList');list.innerHTML='';rounds.slice().reverse().forEach((x,i)=>{const row=document.createElement('div');row.className='row';row.innerHTML=`<span>Demo round ${rounds.length-i}</span><strong>${x.toFixed(2)}x</strong>`;list.appendChild(row)});const avg=rounds.reduce((a,b)=>a+b,0)/rounds.length;document.getElementById('total').textContent=rounds.length;document.getElementById('average').textContent=avg.toFixed(2)+'x';document.getElementById('highest').textContent=Math.max(...rounds).toFixed(2)+'x';document.getElementById('lowest').textContent=Math.min(...rounds).toFixed(2)+'x'}
+function addDemoRound(){rounds.push(Number((1+Math.random()*8).toFixed(2)));render()}
+function enableAlert(){const t=document.getElementById('threshold').value;const s=document.getElementById('alertStatus');s.textContent=`Demo alert enabled at ${Number(t).toFixed(2)}x.`;s.className='status on'}
+function goDashboard(){document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})}
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}render();

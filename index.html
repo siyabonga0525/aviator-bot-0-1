@@ -1,50 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aviator Bot 0.1</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="logo">AVIATOR <span>BOT 0.1</span></div>
-    <button class="menu">☰</button>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="badge">PREMIUM</div>
-      <h1>AVIATOR<br><span>BOT 0.1</span></h1>
-      <p>VIP STATISTICS &amp; ALERTS</p>
-      <button class="primary" onclick="showMessage()">ENTER DASHBOARD</button>
-    </section>
-
-    <section class="cards">
-      <div class="card">
-        <div class="icon">📊</div>
-        <h2>Round History</h2>
-        <p>View previous demo rounds and statistics.</p>
-      </div>
-      <div class="card">
-        <div class="icon">📈</div>
-        <h2>Statistics</h2>
-        <p>Explore historical data in a simple dashboard.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🔔</div>
-        <h2>Demo Alerts</h2>
-        <p>Test notification features using simulated data.</p>
-      </div>
-    </section>
-
-    <section class="notice">
-      <strong>DEMO VERSION 0.1</strong>
-      <p>This free prototype displays statistics and simulated alerts. It does not predict future game results.</p>
-    </section>
-  </main>
-
-  <footer>© 2026 Aviator Bot 0.1</footer>
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aviator Bot 0.2</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="logo">AVIATOR <span>BOT 0.2</span></div><button class="menu" onclick="toggleMenu()">☰</button></header>
+<nav id="nav"><a href="#home">Home</a><a href="#dashboard">Dashboard</a><a href="#history">History</a><a href="#alerts">Alerts</a></nav>
+<main>
+<section id="home" class="hero"><div class="badge">PREMIUM DEMO</div><h1>AVIATOR<br><span>BOT 0.2</span></h1><p>STATISTICS &amp; SIMULATED ALERTS</p><button class="primary" onclick="goDashboard()">OPEN DASHBOARD</button></section>
+<section id="dashboard"><h2 class="section-title">Dashboard</h2><div class="stats">
+<div class="stat"><small>DEMO ROUNDS</small><strong id="total">0</strong></div><div class="stat"><small>AVERAGE</small><strong id="average">0.00x</strong></div><div class="stat"><small>HIGHEST</small><strong id="highest">0.00x</strong></div><div class="stat"><small>LOWEST</small><strong id="lowest">0.00x</strong></div></div></section>
+<section id="history" class="panel"><div class="panel-head"><h2>Round History</h2><button class="small" onclick="addDemoRound()">ADD DEMO ROUND</button></div><div id="historyList" class="history"></div></section>
+<section id="alerts" class="panel"><h2>Demo Alerts</h2><p class="muted">Choose a demonstration threshold. These alerts are simulated and do not predict future results.</p><div class="alert-row"><select id="threshold"><option value="2">2.00x</option><option value="3">3.00x</option><option value="5">5.00x</option><option value="10">10.00x</option></select><button class="small" onclick="enableAlert()">ENABLE DEMO ALERT</button></div><div id="alertStatus" class="status">Alerts are off.</div></section>
+<section class="notice"><strong>DEMO / INFORMATIONAL ONLY</strong><p>This dashboard uses simulated data. It does not predict, guarantee, or recommend future game outcomes or betting decisions.</p></section></main><footer>© 2026 Aviator Bot 0.2</footer><script src="script.js"></script></body></html>
