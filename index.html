@@ -1,43 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aviator Bot 0.6</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviator Bot 0.6.1</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070707;color:#fff;font-family:Arial,sans-serif}
+header{height:64px;border-bottom:1px solid #292929;padding:0 18px;display:flex;align-items:center;justify-content:space-between}
+header b{font-size:19px}header span,.red{color:#ed1722}button{cursor:pointer}
+main{max-width:520px;margin:auto;padding:18px 15px 50px}
+.hero,.card{background:#111;border:1px solid #303030;border-radius:24px}
+.hero{padding:34px 20px;text-align:center;margin-bottom:30px;background:linear-gradient(145deg,#190607,#090909);border-color:#76131a}
+.badge{display:inline-block;border:2px solid #ed1722;color:#ff3640;border-radius:30px;padding:10px 18px;font-size:11px;font-weight:bold;letter-spacing:3px}
+h1{font-size:45px;line-height:.95;margin:35px 0 20px}h1 span{color:#ed1722}
+.hero p{color:#aaa;letter-spacing:3px;font-size:12px;line-height:1.5}
+.primary{background:#ed0b16;color:#fff;border:0;border-radius:11px;padding:14px 20px;font-weight:bold}
+.balance{margin:15px 0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:#121212;border:1px solid #303030;border-radius:18px;padding:16px;color:#aaa;font-size:12px}
+.stat b{display:block;color:#fff;font-size:23px;margin-top:8px}
+.card{padding:20px;margin-top:16px}.card h2{margin-top:0}
+.card p,.card li{color:#bbb;line-height:1.45}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input{width:78px;padding:8px;border-radius:7px;border:0}.status{margin-top:13px;padding:13px;background:#1b1b1b;border-radius:11px}
+.history-row{display:flex;justify-content:space-between;padding:13px;margin:7px 0;background:#1b1b1b;border-radius:11px}
+.bar{height:9px;background:#292929;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:#ed0b16}
+footer{text-align:center;color:#777;padding:20px;font-size:13px}
+</style>
 </head>
 <body>
-<header><b>AVIATOR <span>BOT 0.6</span></b><button id="menu">☰</button></header>
-
+<header><b>AVIATOR <span class="red">BOT 0.6.1</span></b><button id="menuBtn">☰</button></header>
 <main>
 <section class="hero">
-  <div class="badge">DEMO • EDUCATIONAL</div>
-  <h1>AVIATOR<br><span>BOT 0.6</span></h1>
-  <p>VIRTUAL CREDITS • PRACTICE • PERFORMANCE</p>
-  <button id="startBtn" class="primary">START PRACTICE</button>
+<div class="badge">DEMO • EDUCATIONAL</div>
+<h1>AVIATOR<br><span>BOT 0.6.1</span></h1>
+<p>VIRTUAL CREDITS • PRACTICE • PERFORMANCE</p>
+<button type="button" class="primary" id="startBtn">START PRACTICE</button>
 </section>
 
-<h2>Dashboard</h2>
 <div class="balance">VIRTUAL BALANCE <b id="balance">1,000</b> credits</div>
-
+<h2>Dashboard</h2>
 <section class="stats">
-  <div>ROUNDS<strong id="rounds">0</strong></div>
-  <div>WIN RATE<strong id="winRate">0%</strong></div>
-  <div>WINS<strong id="wins">0</strong></div>
-  <div>LOSSES<strong id="losses">0</strong></div>
-  <div>PROFIT / LOSS<strong id="profit">0</strong></div>
-  <div>BEST ROUND<strong id="best">—</strong></div>
+<div class="stat">ROUNDS<b id="rounds">0</b></div>
+<div class="stat">WIN RATE<b id="winRate">0%</b></div>
+<div class="stat">WINS<b id="wins">0</b></div>
+<div class="stat">LOSSES<b id="losses">0</b></div>
+<div class="stat">PROFIT / LOSS<b id="profit">0</b></div>
+<div class="stat">BEST ROUND<b id="best">—</b></div>
 </section>
 
 <section class="card">
 <h2>Practice Round</h2>
-<p>Virtual credits only. Results are randomly generated for educational practice.</p>
-<label>Virtual stake</label>
+<p>Virtual credits only. Outcomes are randomly generated for educational practice.</p>
+<p><b>Virtual stake</b></p>
 <div class="controls">
-<input id="stake" type="number" min="1" max="1000" value="50">
-<button id="runBtn" class="primary">RUN DEMO ROUND</button>
+<input id="stake" type="number" value="50" min="1" max="1000">
+<button type="button" class="primary" id="runBtn">RUN DEMO ROUND</button>
 </div>
-<b>Practice cash-out: <span id="cashout">2.00x</span></b>
+<p>Practice cash-out: <b id="cashout">2.00x</b></p>
 <div id="status" class="status">Ready for a practice round.</div>
 </section>
 
@@ -55,21 +73,90 @@
 <section class="card">
 <h2>Demo Alert</h2>
 <p>Notifications are demonstrations only and do not predict future outcomes.</p>
-<button id="alertBtn" class="primary">GENERATE DEMO ALERT</button>
+<button type="button" class="primary" id="alertBtn">GENERATE DEMO ALERT</button>
 <div id="alert" class="status">No demo alert generated.</div>
 </section>
 
 <section class="card">
-<h2>About 0.6</h2>
+<h2>About 0.6.1</h2>
 <ul>
-<li>Uses virtual credits only.</li>
-<li>Random demo outcomes are for practice.</li>
+<li>Virtual credits only.</li>
+<li>Random outcomes are for practice.</li>
 <li>Past rounds do not reliably predict future outcomes.</li>
 <li>No deposits, withdrawals, or real-money gambling connection.</li>
 </ul>
 </section>
 </main>
-<footer>Aviator Bot 0.6 • Free demo • Educational simulator</footer>
-<script src="script.js"></script>
+<footer>Aviator Bot 0.6.1 • Free demo • Educational simulator</footer>
+
+<script>
+(function(){
+let balance=1000, rounds=0, wins=0, losses=0, profit=0, best=0;
+const el=id=>document.getElementById(id);
+
+function render(){
+ el("balance").textContent=balance.toLocaleString();
+ el("rounds").textContent=rounds;
+ el("wins").textContent=wins;
+ el("losses").textContent=losses;
+ el("profit").textContent=(profit>=0?"+":"")+profit;
+ const rate=rounds?Math.round(wins/rounds*100):0;
+ el("winRate").textContent=rate+"%";
+ el("perfRate").textContent=rate+"%";
+ el("bar").style.width=rate+"%";
+ el("best").textContent=best?best.toFixed(2)+"x":"—";
+}
+
+function runRound(){
+ let stake=parseInt(el("stake").value,10);
+ if(!Number.isFinite(stake) || stake<1) stake=1;
+ if(stake>balance){
+   el("status").textContent="Not enough virtual credits.";
+   return;
+ }
+ balance-=stake;
+ const multiplier=+(1.01+Math.random()*5.49).toFixed(2);
+ const cashout=2;
+ const won=multiplier>=cashout;
+ if(won){
+   const payout=stake*cashout;
+   balance+=payout;
+   wins++;
+   profit+=payout-stake;
+ }else{
+   losses++;
+   profit-=stake;
+ }
+ rounds++;
+ if(multiplier>best) best=multiplier;
+ el("status").innerHTML="<b>🚀 ROUND "+rounds+"</b><br>Result: <b>"+multiplier.toFixed(2)+"x</b> — "+(won?"WIN":"LOSS")+"<br>"+(won?"Virtual profit: +"+(stake*(cashout-1)).toFixed(0):"Virtual loss: -"+stake)+" credits";
+ const row=document.createElement("div");
+ row.className="history-row";
+ row.innerHTML="<span>#"+rounds+" • "+multiplier.toFixed(2)+"x</span><b>"+(won?"WIN":"LOSS")+"</b>";
+ const history=el("history");
+ if(history.textContent==="No rounds yet.") history.innerHTML="";
+ history.prepend(row);
+ render();
+}
+
+el("runBtn").onclick=runRound;
+el("startBtn").onclick=function(){
+ el("status").textContent="Practice mode started. Choose a virtual stake and tap RUN DEMO ROUND.";
+ document.querySelector(".card").scrollIntoView({behavior:"smooth"});
+};
+el("alertBtn").onclick=function(){
+ const messages=[
+ "🔔 Demo alert: practice round available.",
+ "🔔 Demo alert: virtual round generated.",
+ "🔔 Demo alert: past rounds do not predict future outcomes."
+ ];
+ el("alert").textContent=messages[Math.floor(Math.random()*messages.length)];
+};
+el("menuBtn").onclick=function(){
+ el("status").textContent="Menu opened — this demo has no additional menu items yet.";
+};
+render();
+})();
+</script>
 </body>
 </html>

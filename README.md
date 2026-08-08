@@ -1,2 +1,3 @@
-# Aviator Bot 0.6
-Educational virtual-credit simulator. All outcomes are random demonstrations. No real-money deposits, withdrawals, betting, or gambling connection.
+# Aviator Bot 0.6.1
+
+Educational virtual-credit simulator only. No real-money betting, deposits, withdrawals, or gambling connection.
