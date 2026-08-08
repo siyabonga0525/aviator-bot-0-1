@@ -1,61 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aviator Bot 0.3 — Demo Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aviator Bot 0.3.1</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="brand">AVIATOR <span>BOT 0.3</span></div>
+<header class="topbar">
+  <div class="brand">AVIATOR <span>BOT 0.3.1</span></div>
   <button class="menu" aria-label="Menu">☰</button>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="badge">DEMO • EDUCATIONAL</div>
-    <h1>AVIATOR<br><span>BOT 0.3</span></h1>
-    <p>STATISTICS • SIMULATED ROUNDS • ALERTS</p>
-    <button class="primary" id="openDashboard">OPEN DASHBOARD</button>
-  </section>
+<section class="hero">
+  <div class="badge">DEMO • EDUCATIONAL</div>
+  <h1>AVIATOR<br><span>BOT 0.3.1</span></h1>
+  <p>STATISTICS • SIMULATED ROUNDS • ALERTS</p>
+  <button class="primary" id="openDashboard">OPEN DASHBOARD</button>
+</section>
 
-  <h2>Dashboard</h2>
-  <section class="stats">
-    <div class="card"><small>DEMO ROUNDS</small><strong id="count">8</strong></div>
-    <div class="card"><small>AVERAGE</small><strong id="avg">2.34x</strong></div>
-    <div class="card"><small>HIGHEST</small><strong id="high">5.10x</strong></div>
-    <div class="card"><small>LOWEST</small><strong id="low">1.08x</strong></div>
-  </section>
+<h2 class="section-title">Dashboard</h2>
 
-  <section class="panel">
-    <div class="panel-head">
-      <div>
-        <h2>Round History</h2>
-        <p>Generated demo data only.</p>
-      </div>
-      <button class="secondary" id="addRound">ADD DEMO ROUND</button>
+<section class="stats">
+  <article class="stat"><div>DEMO ROUNDS</div><strong id="count">8</strong></article>
+  <article class="stat"><div>AVERAGE</div><strong id="avg">2.34x</strong></article>
+  <article class="stat"><div>HIGHEST</div><strong id="high">5.10x</strong></article>
+  <article class="stat"><div>LOWEST</div><strong id="low">1.08x</strong></article>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <div>
+      <h2>Round History</h2>
+      <p>Generated demo data only.</p>
     </div>
-    <div class="chart-wrap">
-      <canvas id="chart" width="800" height="280"></canvas>
-    </div>
-    <div id="rounds" class="rounds"></div>
-  </section>
+    <button class="primary small" id="addRound">ADD DEMO ROUND</button>
+  </div>
+  <div class="chart-box"><canvas id="chart"></canvas></div>
+  <div id="rounds" class="round-grid"></div>
+</section>
 
-  <section class="panel">
-    <h2>Simulated Alert</h2>
-    <p class="muted">These alerts are random demonstrations and do not predict future game outcomes.</p>
-    <button class="primary" id="alertBtn">GENERATE DEMO ALERT</button>
-    <div id="alertBox" class="alert">No demo alert generated yet.</div>
-  </section>
+<section class="panel">
+  <h2>Simulated Alert</h2>
+  <p>Notifications below are demonstrations only and do not predict future outcomes.</p>
+  <button class="primary small" id="alertBtn">GENERATE DEMO ALERT</button>
+  <div id="alertBox" class="alert">No demo alert generated yet.</div>
+</section>
 
-  <section class="panel">
-    <h2>About 0.3</h2>
-    <p class="muted">A browser-only educational dashboard for exploring historical-style data, basic statistics and simulated notifications. It does not connect to or predict any real-money game.</p>
-  </section>
+<section class="panel">
+  <h2>About 0.3.1</h2>
+  <p>This browser-only project demonstrates statistics, charts and simulated notifications using sample data. It does not connect to or predict any real-money gambling game.</p>
+</section>
 </main>
 
-<footer>Aviator Bot 0.3 • Demo only</footer>
+<footer>Aviator Bot 0.3.1 • Demo only</footer>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,12 +1,13 @@
-# Aviator Bot 0.3
+# Aviator Bot 0.3.1
 
-Demo-only educational statistics dashboard.
+Corrected demo/educational dashboard.
 
-Features:
-- Interactive demo round history
-- Basic statistics
-- Simple chart
+Includes:
+- Responsive statistic cards
+- Working canvas chart
+- Demo round generator
+- Visible round history
 - Simulated notifications
-- Mobile-friendly design
+- Mobile-friendly layout
 
-This project does not connect to, predict, or automate any real-money gambling game.
+This is sample-data software only. It does not connect to, predict, or automate any real-money gambling game.
